@@ -1,305 +1,39 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="KneeRoute — evidence-linked acute knee clinical pathways." />
-  <title>KneeRoute | Acute Knee Pathways</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KneeRoute | Acute Knee Pathways</title>
+<style>
+:root{--ink:#0d302f;--green:#1c8b66;--mint:#e8f6ef;--paper:#f7f8f3;--white:#fff;--muted:#667b77;--line:#dce5dd;--warn:#9b6b1f;--danger:#993d37}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,sans-serif;line-height:1.5}.banner{background:var(--ink);color:#d8eee6;text-align:center;padding:7px;font-size:11px}.top{height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;border-bottom:1px solid var(--line);background:rgba(247,248,243,.97);position:sticky;top:0;z-index:10}.brand{font-weight:800;font-size:20px}.brand span{color:var(--green)}nav{display:flex;gap:8px}nav button,.ghost,.primary{border:0;border-radius:8px;padding:10px 14px;font-weight:700;cursor:pointer}nav button,.ghost{background:transparent;color:var(--ink)}nav button.active{background:#edf2ed}.primary{background:var(--ink);color:#fff}.view{display:none}.view.active{display:block}.hero,.shell{max-width:1350px;margin:auto;padding:90px 6vw}.hero{display:grid;grid-template-columns:1fr .85fr;gap:7vw;align-items:center}.eyebrow{text-transform:uppercase;letter-spacing:.13em;color:var(--green);font-size:11px;font-weight:800}.hero h1,.shell h1{font-size:64px;line-height:1.02;letter-spacing:-.05em;margin:15px 0}.hero h1 em{font-style:normal;color:var(--green)}.hero p,.lead{color:var(--muted);font-size:18px;max-width:650px}.preview,.card,.result,.config{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 50px rgba(13,48,47,.08)}.preview{padding:28px}.mock{border:1px solid var(--line);border-radius:9px;padding:13px;margin:10px 0}.mock.sel{background:#effaf4;border-color:#7ed2ae}.route{background:var(--ink);color:#fff;border-radius:9px;padding:16px;margin-top:20px}.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;border-top:1px solid var(--line);padding-top:20px;margin-top:50px}.trust b,.trust span{display:block}.trust span{font-size:10px;color:#7c8e89}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:40px}.card{padding:25px;min-height:190px}.card h3{margin-top:55px}.app{display:grid;grid-template-columns:240px 1fr;min-height:calc(100vh - 100px)}.side{background:#f0f4ef;border-right:1px solid var(--line);padding:22px 16px;display:flex;flex-direction:column}.side button{border:0;background:transparent;text-align:left;padding:10px;border-radius:8px;margin:2px 0;color:#5f746f}.side button.active{background:#fff;color:var(--ink);font-weight:800}.side .note{margin-top:auto;background:#dfece3;border-radius:9px;padding:13px;font-size:10px}.workspace{background:#fff}.workhead{height:64px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px}.formwrap{max-width:850px;padding:50px 6vw}.step{display:none}.step.active{display:block}.step h2{font-size:36px;margin:8px 0}.formcard{border-top:1px solid var(--line);padding-top:15px}.row{display:grid;grid-template-columns:1fr 1fr;gap:15px}label.field{display:flex;flex-direction:column;font-size:11px;font-weight:800;margin:14px 0}select,input,textarea{margin-top:7px;border:1px solid #c9d5cd;border-radius:8px;padding:11px;background:#fff}textarea{min-height:80px}.choice{display:flex;gap:12px;padding:15px 8px;border-bottom:1px solid var(--line);cursor:pointer}.choice input{margin-top:3px}.choice b,.choice small{display:block}.choice small{color:#80928d;font-size:10px}.actions{display:flex;justify-content:space-between;margin-top:28px}.result{overflow:hidden}.resulthead{background:#ecf7f0;padding:18px;display:flex;justify-content:space-between;align-items:center}.resultbody{padding:20px}.rr{display:grid;grid-template-columns:130px 1fr;gap:15px;padding:12px 0;border-bottom:1px solid #edf1ed}.rr span{font-size:9px;color:#80918c;text-transform:uppercase;letter-spacing:.1em;font-weight:800}.chip{display:inline-block;border:1px solid #cbd8d0;border-radius:20px;padding:5px 8px;font-size:9px;margin:3px}.alert{background:#fff3f0;border:1px solid #eac7c3;color:#7e352f;padding:18px;border-radius:10px}.table{border-top:1px solid var(--line);margin-top:30px}.path{display:grid;grid-template-columns:45px 1fr 110px 20px;gap:15px;align-items:center;padding:19px 6px;border-bottom:1px solid var(--line)}.status{font-size:9px;border-radius:20px;padding:5px 8px;background:#e3f4ea;color:#227856;text-align:center}.evidence{display:grid;gap:12px;margin-top:25px}.eitem{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px}.eitem p{font-size:12px;color:var(--muted)}.eitem a{color:var(--green);font-weight:800;font-size:11px}.admin{display:grid;grid-template-columns:1fr 1fr;gap:18px}.config{padding:25px}.grow{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:12px 0;font-size:11px}.warn{color:var(--warn)}.tiny{font-size:10px;color:#7a8c87}.toast{position:fixed;right:22px;bottom:22px;background:var(--ink);color:#fff;padding:12px 15px;border-radius:8px;opacity:0;transition:.2s}.toast.show{opacity:1}@media(max-width:900px){nav{display:none}.hero,.admin{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.app{grid-template-columns:1fr}.side{display:none}.row{grid-template-columns:1fr}}@media(max-width:600px){.hero,.shell{padding-left:20px;padding-right:20px}.hero h1,.shell h1{font-size:44px}.trust{grid-template-columns:1fr}.rr{grid-template-columns:1fr}.path{grid-template-columns:35px 1fr 20px}.path .status{display:none}}
+</style>
 </head>
-
 <body>
-  <div class="prototype-banner">
-    Research prototype — not for clinical decision-making or patient use
-  </div>
+<div class="banner"><b>Research prototype</b> — clinician-facing demonstration only; not yet validated for clinical use</div>
+<header class="top"><div class="brand">Knee<span>Route</span></div><nav><button data-view="home" class="active">Home</button><button data-view="assess">New assessment</button><button data-view="pathways">Pathways</button><button data-view="evidence">Evidence</button><button data-view="admin">Local setup</button></nav><button class="ghost" data-view="assess">Start assessment</button></header>
 
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="KneeRoute home">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 48 48">
-          <path d="M15 8c8 0 16 6 16 15 0 8-5 13-13 17"/>
-          <path d="M33 8c-8 0-16 6-16 15 0 8 5 13 13 17"/>
-          <circle cx="24" cy="24" r="3.5"/>
-        </svg>
-      </span>
-      <span>Knee<span>Route</span></span>
-    </a>
+<section id="home" class="view active"><div class="hero"><div><div class="eyebrow">Evidence-linked acute knee pathways</div><h1>The right knee patient.<br><em>The right pathway.</em><br>At the right time.</h1><p>KneeRoute translates structured acute-knee presentations into transparent pathway suggestions for investigation, referral and specialist review.</p><button class="primary" data-view="assess">Start a clinical assessment →</button><div class="trust"><div><b>Clinician-led</b><span>Built around real workflows</span></div><div><b>Evidence-linked</b><span>Rationale behind every step</span></div><div><b>Locally adaptable</b><span>Map to local service delivery</span></div></div></div><div class="preview"><div class="eyebrow">Presentation</div><h3>Which features are present?</h3><div class="mock sel">✓ Rapid swelling / haemarthrosis</div><div class="mock">□ Mechanical locking</div><div class="mock">□ Patellar instability</div><div class="route"><small>Suggested route</small><br><b>Acute knee specialist pathway</b><br><small>Evidence and local pathway details available</small></div></div></div><div class="shell"><div class="eyebrow">Product concept</div><h1 style="font-size:46px">Transparent routing, not a black box.</h1><div class="grid"><div class="card"><small>01</small><h3>Structured intake</h3><p>Mechanism, swelling, weight-bearing, locking, instability, examination and imaging.</p></div><div class="card"><small>02</small><h3>Suggested route</h3><p>Clear pathway destination, urgency category and escalation triggers.</p></div><div class="card"><small>03</small><h3>Evidence drawer</h3><p>Show the guideline or standard supporting each rule, plus version and review status.</p></div></div></div></section>
 
-    <nav>
-      <a href="#product">Product</a>
-      <a href="#pathways">Pathways</a>
-      <a href="#evidence">Evidence</a>
-      <a href="#about">About</a>
-    </nav>
+<section id="assess" class="view"><div class="app"><aside class="side"><b>KneeRoute</b><p class="tiny">ACUTE KNEE ASSESSMENT</p><button data-step="1" class="active">1 · Case details</button><button data-step="2">2 · Safety screen</button><button data-step="3">3 · Presentation</button><button data-step="4">4 · Findings</button><button data-step="5">5 · Suggested route</button><div class="note"><b>Privacy by design</b><p>Do not enter name, NHS number, DOB, address or other patient identifiers.</p></div></aside><div class="workspace"><div class="workhead"><b>Acute traumatic knee injury</b><span class="tiny">Logic v0.2-draft · not approved</span></div><div class="formwrap">
+<div class="step active" data-screen="1"><div class="eyebrow">Step 1 of 5</div><h2>Case details</h2><p class="lead">Capture only the information needed to route the presentation.</p><div class="formcard"><div class="row"><label class="field">Age group<select id="age"><option value="">Select</option><option value="u16">Under 16</option><option value="16-17">16–17</option><option value="18-44">18–44</option><option value="45+">45+</option></select></label><label class="field">Time since injury<select id="time"><option value="">Select</option><option>Today</option><option>1–3 days</option><option>4–14 days</option><option>>14 days</option></select></label></div><label class="field">Mechanism<select id="mechanism"><option value="">Select</option><option>Twisting / pivoting</option><option>Direct contact</option><option>Hyperextension</option><option>Patellar dislocation event</option><option>High-energy injury</option><option>Other / unclear</option></select></label><label class="field">Optional non-identifiable note<textarea id="note" maxlength="240" placeholder="e.g. football injury, immediate swelling, unable to continue playing"></textarea></label></div><div class="actions"><span></span><button class="primary" data-next="2">Continue →</button></div></div>
+<div class="step" data-screen="2"><div class="eyebrow">Step 2 of 5</div><h2>Immediate safety screen</h2><p class="lead">Features below should take the patient out of a routine pathway.</p><div class="formcard"><label class="choice"><input type="checkbox" data-key="nv"><span><b>Neurovascular concern</b><small>Pulse deficit, altered perfusion or neurological deficit</small></span></label><label class="choice"><input type="checkbox" data-key="disloc"><span><b>Suspected unreduced knee dislocation</b><small>Gross deformity or high-risk mechanism</small></span></label><label class="choice"><input type="checkbox" data-key="infection"><span><b>Possible septic arthritis / systemic illness</b><small>Clinical concern for infection</small></span></label><label class="choice"><input type="checkbox" data-key="open"><span><b>Open injury</b><small>Open wound / open fracture concern</small></span></label><label class="choice"><input type="checkbox" data-key="none"><span><b>None of the above</b><small>Proceed with acute-knee assessment</small></span></label></div><div class="actions"><button class="ghost" data-back="1">← Back</button><button class="primary" data-next="3">Continue →</button></div></div>
+<div class="step" data-screen="3"><div class="eyebrow">Step 3 of 5</div><h2>Presentation</h2><p class="lead">Select all features present.</p><div class="formcard"><label class="choice"><input type="checkbox" data-key="haem"><span><b>Rapid swelling / suspected haemarthrosis</b><small>Marked swelling developing within hours</small></span></label><label class="choice"><input type="checkbox" data-key="lock"><span><b>True mechanical locking</b><small>Persistent block to knee extension</small></span></label><label class="choice"><input type="checkbox" data-key="patella"><span><b>Patellar dislocation / instability event</b><small>Including spontaneous reduction</small></span></label><label class="choice"><input type="checkbox" data-key="unable"><span><b>Unable to weight-bear</b><small>Following acute trauma</small></span></label><label class="choice"><input type="checkbox" data-key="pop"><span><b>Audible / felt pop</b><small>At the time of injury</small></span></label><label class="choice"><input type="checkbox" data-key="giving"><span><b>Instability / giving way</b><small>Subjective instability after injury</small></span></label></div><div class="actions"><button class="ghost" data-back="2">← Back</button><button class="primary" data-next="4">Continue →</button></div></div>
+<div class="step" data-screen="4"><div class="eyebrow">Step 4 of 5</div><h2>Examination and imaging</h2><p class="lead">Add findings already available; do not delay escalation just to complete this form.</p><div class="formcard"><label class="choice"><input type="checkbox" data-key="fracture"><span><b>Fracture identified or strongly suspected</b><small>Clinical assessment or radiograph</small></span></label><label class="choice"><input type="checkbox" data-key="extensor"><span><b>Extensor mechanism concern</b><small>Unable straight-leg raise / tendon injury concern</small></span></label><label class="choice"><input type="checkbox" data-key="instability"><span><b>Significant ligamentous instability</b><small>Clinical concern for major ligament injury</small></span></label><label class="choice"><input type="checkbox" data-key="xray"><span><b>Radiographs show no acute fracture</b><small>Where performed</small></span></label><label class="choice"><input type="checkbox" data-key="ocf"><span><b>Osteochondral fragment / loose body concern</b><small>Clinical or imaging concern</small></span></label></div><div class="actions"><button class="ghost" data-back="3">← Back</button><button class="primary" id="generate">Generate pathway →</button></div></div>
+<div class="step" data-screen="5"><div class="eyebrow">Step 5 of 5</div><h2>Suggested pathway</h2><p class="lead">Transparent route based on the selected presentation features.</p><div id="output"></div><div class="actions"><button class="ghost" data-back="4">← Amend findings</button><div><button class="ghost" id="copy">Copy summary</button> <button class="primary" onclick="window.print()">Print</button></div></div></div>
+</div></div></div></section>
 
-    <a class="button button-small button-outline" href="#demo">Open prototype</a>
-  </header>
+<section id="pathways" class="view"><div class="shell"><div class="eyebrow">Pathway library</div><h1>Acute knee pathways</h1><p class="lead">Each pathway should have a clinical logic version, evidence source, reviewer and local operational destination.</p><div class="table"><div class="path"><span>01</span><div><b>Traumatic knee haemarthrosis</b><div class="tiny">Acute swelling after trauma</div></div><span class="status">Prototype</span><b>→</b></div><div class="path"><span>02</span><div><b>Suspected ACL injury</b><div class="tiny">Pivot / pop / instability ± haemarthrosis</div></div><span class="status">Prototype</span><b>→</b></div><div class="path"><span>03</span><div><b>Locked knee / acute meniscal injury</b><div class="tiny">Persistent mechanical block</div></div><span class="status">Prototype</span><b>→</b></div><div class="path"><span>04</span><div><b>First-time lateral patellar dislocation</b><div class="tiny">Dislocation or spontaneous reduction</div></div><span class="status">Prototype</span><b>→</b></div><div class="path"><span>05</span><div><b>Osteochondral injury</b><div class="tiny">Loose body / fragment concern</div></div><span class="status">Draft</span><b>→</b></div><div class="path"><span>06</span><div><b>Multiligament knee injury</b><div class="tiny">High-energy / gross instability</div></div><span class="status">Draft</span><b>→</b></div></div></div></section>
 
-  <main id="top">
-    <section class="hero">
-      <div class="hero-copy">
-        <div class="eyebrow"><span></span> Evidence-linked acute knee pathways</div>
-        <h1>The right knee patient.<br><em>The right pathway.</em><br>At the right time.</h1>
-        <p class="hero-lede">
-          KneeRoute translates acute knee presentations into transparent, evidence-linked
-          pathways for investigation, referral and specialist review.
-        </p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#demo">Explore a pathway <span>→</span></a>
-          <a class="text-link" href="#product">How it works <span>↘</span></a>
-        </div>
+<section id="evidence" class="view"><div class="shell"><div class="eyebrow">Evidence library</div><h1>Sources behind the pathway</h1><p class="lead">A production version should show exactly which source supports each rule.</p><div class="evidence"><div class="eitem"><b>BOASt — Best Practice for Management of ACL Injuries</b><p>British Orthopaedic Association, September 2020. Includes an audit standard that acute traumatic knee haemarthrosis should be assessed by a clinician proficient in assessment of knee injuries.</p><a href="https://www.boa.ac.uk/resource/best-practice-management-for-acl-injuries-pdf.html" target="_blank">Open official source ↗</a></div><div class="eitem"><b>BOASt — Assessment and Management of First Time Lateral Patellar Dislocation</b><p>British Orthopaedic Association, December 2024. Recommendations for assessment and initial management of FTLPD, including suspected dislocations.</p><a href="https://www.boa.ac.uk/resource/boast-assessment-and-management-of-first-time-lateral-patellar-dislocation.html" target="_blank">Open official source ↗</a></div><div class="eitem"><b>BOASt — ACL Injury in the Skeletally Immature Patient</b><p>British Orthopaedic Association, May 2022. Recommendations for suspected ACL injury in skeletally immature patients.</p><a href="https://www.boa.ac.uk/resource/boast-management-of-anterior-cruciate-ligament-injury-in-the-skeletally-immature-patient.html" target="_blank">Open official source ↗</a></div><div class="eitem"><b>NICE CKS — Ottawa knee rule</b><p>NICE CKS recommends use of the Ottawa knee rule to determine whether radiography is needed for suspected knee fracture in people over 2 years.</p><a href="https://cks.nice.org.uk/topics/knee-pain-assessment/diagnosis/excluding-fracture-ottawa-knee-rule/" target="_blank">Open official source ↗</a></div></div></div></section>
 
-        <div class="trust-row">
-          <div><strong>Clinician-led</strong><span>Designed around real workflows</span></div>
-          <div><strong>Evidence-linked</strong><span>Rationale behind every step</span></div>
-          <div><strong>Locally adaptable</strong><span>Built for pathway variation</span></div>
-        </div>
-      </div>
-
-      <div class="hero-card">
-        <div class="window-bar">
-          <div class="dots"><i></i><i></i><i></i></div>
-          <span>Acute knee pathway</span>
-          <div></div>
-        </div>
-        <div class="mock-content">
-          <div class="patient-meta">
-            <span class="patient-icon">P</span>
-            <div><strong>New presentation</strong><small>Acute traumatic knee injury</small></div>
-            <span class="status-pill">In progress</span>
-          </div>
-
-          <div class="stepper">
-            <div class="step done"><b>1</b><span>Safety</span></div>
-            <i></i>
-            <div class="step current"><b>2</b><span>Presentation</span></div>
-            <i></i>
-            <div class="step"><b>3</b><span>Findings</span></div>
-            <i></i>
-            <div class="step"><b>4</b><span>Route</span></div>
-          </div>
-
-          <p class="micro-label">PRESENTATION</p>
-          <h3>Which features are present?</h3>
-
-          <div class="choice selected">
-            <span class="check">✓</span>
-            <div><strong>Rapid swelling / haemarthrosis</strong><small>Within hours of injury</small></div>
-          </div>
-          <div class="choice">
-            <span class="empty-check"></span>
-            <div><strong>Mechanical locking</strong><small>True block to extension</small></div>
-          </div>
-          <div class="choice">
-            <span class="empty-check"></span>
-            <div><strong>Patellar instability</strong><small>Dislocation or spontaneous reduction</small></div>
-          </div>
-
-          <button class="mock-button">Continue <span>→</span></button>
-        </div>
-      </div>
-    </section>
-
-    <section class="problem-strip">
-      <p>Acute knee care is often fragmented across <strong>ED</strong>, <strong>primary care</strong>,
-        <strong>physiotherapy</strong>, <strong>radiology</strong> and <strong>orthopaedics</strong>.</p>
-      <span>KneeRoute connects the pathway.</span>
-    </section>
-
-    <section class="section" id="product">
-      <div class="section-heading">
-        <div>
-          <div class="eyebrow"><span></span> The product</div>
-          <h2>Pathway logic clinicians<br>can actually interrogate.</h2>
-        </div>
-        <p>
-          Not a black-box diagnosis. KneeRoute makes pathway recommendations visible,
-          auditable and connected to the evidence or standard behind them.
-        </p>
-      </div>
-
-      <div class="feature-grid">
-        <article class="feature-card">
-          <span class="feature-number">01</span>
-          <div class="feature-icon">⌁</div>
-          <h3>Structured presentation</h3>
-          <p>Capture mechanism, swelling, weight-bearing, mechanical symptoms, examination and imaging in a fast clinical workflow.</p>
-        </article>
-        <article class="feature-card featured">
-          <span class="feature-number">02</span>
-          <div class="feature-icon">↗</div>
-          <h3>Transparent routing</h3>
-          <p>Show the recommended next step, urgency and rationale — without replacing clinician judgement.</p>
-        </article>
-        <article class="feature-card">
-          <span class="feature-number">03</span>
-          <div class="feature-icon">≡</div>
-          <h3>Evidence at the point of care</h3>
-          <p>Every recommendation can link to the relevant standard, guideline, consensus statement or primary evidence.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="pathways-section" id="pathways">
-      <div class="section-heading light">
-        <div>
-          <div class="eyebrow eyebrow-light"><span></span> Initial pathway library</div>
-          <h2>Start focused.<br>Expand systematically.</h2>
-        </div>
-        <p>The MVP starts with high-value acute presentations rather than trying to become an encyclopaedia of knee surgery.</p>
-      </div>
-
-      <div class="pathway-list">
-        <div class="pathway-row active"><span>01</span><strong>Traumatic knee haemarthrosis</strong><b>Prototype pathway</b><i>→</i></div>
-        <div class="pathway-row"><span>02</span><strong>Suspected ACL injury</strong><b>Planned</b><i>→</i></div>
-        <div class="pathway-row"><span>03</span><strong>Locked knee / meniscal injury</strong><b>Planned</b><i>→</i></div>
-        <div class="pathway-row"><span>04</span><strong>First-time patellar dislocation</strong><b>Planned</b><i>→</i></div>
-        <div class="pathway-row"><span>05</span><strong>Osteochondral injury</strong><b>Planned</b><i>→</i></div>
-        <div class="pathway-row"><span>06</span><strong>Multiligament knee injury</strong><b>Planned</b><i>→</i></div>
-      </div>
-    </section>
-
-    <section class="section demo-section" id="demo">
-      <div class="demo-intro">
-        <div class="eyebrow"><span></span> Interactive concept</div>
-        <h2>Try the prototype pathway.</h2>
-        <p>This demonstrator shows the interaction model only. The clinical logic and time thresholds require formal expert review and validation before any real-world use.</p>
-      </div>
-
-      <div class="app-shell">
-        <aside class="app-sidebar">
-          <a class="brand app-brand" href="#top">
-            <span class="brand-mark small" aria-hidden="true">
-              <svg viewBox="0 0 48 48"><path d="M15 8c8 0 16 6 16 15 0 8-5 13-13 17"/><path d="M33 8c-8 0-16 6-16 15 0 8 5 13 13 17"/><circle cx="24" cy="24" r="3.5"/></svg>
-            </span>
-            <span>Knee<span>Route</span></span>
-          </a>
-          <p class="sidebar-label">ACUTE KNEE</p>
-          <button class="side-item active" data-goto="1"><span>1</span> Safety screen</button>
-          <button class="side-item" data-goto="2"><span>2</span> Presentation</button>
-          <button class="side-item" data-goto="3"><span>3</span> Key findings</button>
-          <button class="side-item" data-goto="4"><span>4</span> Suggested route</button>
-          <div class="sidebar-note">
-            <strong>Research prototype</strong>
-            <p>No patient-identifiable data should be entered.</p>
-          </div>
-        </aside>
-
-        <div class="app-main">
-          <div class="app-topbar">
-            <div>
-              <small>PATHWAY</small>
-              <strong>Acute traumatic knee injury</strong>
-            </div>
-            <button class="reset-button" id="resetBtn">Reset pathway</button>
-          </div>
-
-          <div class="app-stage">
-            <section class="screen visible" data-screen="1">
-              <div class="screen-kicker">STEP 1 OF 4</div>
-              <h3>Immediate safety screen</h3>
-              <p class="screen-lede">Identify features that may require urgent assessment outside the routine acute knee pathway.</p>
-              <div class="question-card">
-                <label class="option"><input type="checkbox" data-key="neurovascular"><span></span><div><strong>Neurovascular concern</strong><small>Altered perfusion, pulse deficit or neurological deficit</small></div></label>
-                <label class="option"><input type="checkbox" data-key="dislocation"><span></span><div><strong>Suspected unreduced knee dislocation</strong><small>Gross deformity or high-risk mechanism</small></div></label>
-                <label class="option"><input type="checkbox" data-key="infection"><span></span><div><strong>Possible infection</strong><small>Clinical concern for septic arthritis/systemic illness</small></div></label>
-                <label class="option"><input type="checkbox" data-key="noneRedFlags"><span></span><div><strong>None of the above</strong><small>Proceed with acute knee assessment</small></div></label>
-              </div>
-              <div class="screen-actions">
-                <span></span><button class="button button-primary next" data-next="2">Continue <span>→</span></button>
-              </div>
-            </section>
-
-            <section class="screen" data-screen="2">
-              <div class="screen-kicker">STEP 2 OF 4</div>
-              <h3>Presentation</h3>
-              <p class="screen-lede">Select the features that best describe the acute presentation.</p>
-              <div class="question-card">
-                <label class="option"><input type="checkbox" data-key="haemarthrosis"><span></span><div><strong>Rapid swelling / suspected haemarthrosis</strong><small>Marked swelling developing within hours of injury</small></div></label>
-                <label class="option"><input type="checkbox" data-key="locking"><span></span><div><strong>True mechanical locking</strong><small>Persistent mechanical block to extension</small></div></label>
-                <label class="option"><input type="checkbox" data-key="patella"><span></span><div><strong>Patellar dislocation / instability event</strong><small>Including spontaneous reduction</small></div></label>
-                <label class="option"><input type="checkbox" data-key="unableWB"><span></span><div><strong>Unable to weight-bear</strong><small>Following acute trauma</small></div></label>
-              </div>
-              <div class="screen-actions">
-                <button class="back" data-back="1">← Back</button><button class="button button-primary next" data-next="3">Continue <span>→</span></button>
-              </div>
-            </section>
-
-            <section class="screen" data-screen="3">
-              <div class="screen-kicker">STEP 3 OF 4</div>
-              <h3>Key findings</h3>
-              <p class="screen-lede">Add available examination or initial imaging findings.</p>
-              <div class="question-card">
-                <label class="option"><input type="checkbox" data-key="fracture"><span></span><div><strong>Fracture identified or strongly suspected</strong><small>On radiograph or clinical assessment</small></div></label>
-                <label class="option"><input type="checkbox" data-key="extensor"><span></span><div><strong>Extensor mechanism concern</strong><small>Unable straight-leg raise / suspected tendon injury</small></div></label>
-                <label class="option"><input type="checkbox" data-key="instability"><span></span><div><strong>Significant ligamentous instability</strong><small>Clinical concern for major ligament injury</small></div></label>
-                <label class="option"><input type="checkbox" data-key="xrayNegative"><span></span><div><strong>Initial radiographs show no acute fracture</strong><small>Where radiography has been performed</small></div></label>
-              </div>
-              <div class="screen-actions">
-                <button class="back" data-back="2">← Back</button><button class="button button-primary" id="routeBtn">Generate pathway <span>→</span></button>
-              </div>
-            </section>
-
-            <section class="screen" data-screen="4">
-              <div class="screen-kicker">STEP 4 OF 4</div>
-              <h3>Suggested route</h3>
-              <p class="screen-lede">Prototype output based on the information selected.</p>
-              <div id="routeOutput"></div>
-              <div class="screen-actions">
-                <button class="back" data-back="3">← Amend answers</button>
-                <button class="button button-primary" id="printBtn">Print summary</button>
-              </div>
-            </section>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="evidence-section" id="evidence">
-      <div class="evidence-copy">
-        <div class="eyebrow"><span></span> Evidence architecture</div>
-        <h2>Every route should answer one question:</h2>
-        <blockquote>“Why is the system recommending this?”</blockquote>
-      </div>
-      <div class="evidence-stack">
-        <div><span>01</span><strong>Recommendation</strong><p>Clear pathway action and urgency.</p></div>
-        <div><span>02</span><strong>Clinical rationale</strong><p>Human-readable explanation of the pathway logic.</p></div>
-        <div><span>03</span><strong>Source</strong><p>Guideline, consensus statement, standard or primary evidence.</p></div>
-        <div><span>04</span><strong>Governance</strong><p>Version, reviewer, approval date and planned review date.</p></div>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="vision-card">
-        <div>
-          <div class="eyebrow eyebrow-light"><span></span> Long-term vision</div>
-          <h2>One pathway engine.<br>Locally configurable.</h2>
-        </div>
-        <p>
-          The national evidence layer stays consistent while each organisation can configure
-          referral destinations, clinic names, imaging access and operational steps for its local service.
-        </p>
-        <div class="vision-tags">
-          <span>ED</span><span>Primary care</span><span>MSK</span><span>Orthopaedics</span><span>Radiology</span>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <a class="brand" href="#top">
-      <span class="brand-mark small" aria-hidden="true">
-        <svg viewBox="0 0 48 48"><path d="M15 8c8 0 16 6 16 15 0 8-5 13-13 17"/><path d="M33 8c-8 0-16 6-16 15 0 8 5 13 13 17"/><circle cx="24" cy="24" r="3.5"/></svg>
-      </span>
-      <span>Knee<span>Route</span></span>
-    </a>
-    <p>Clinical pathway concept. Research prototype only.</p>
-    <span>© 2026 KneeRoute</span>
-  </footer>
-
-  <script src="app.js"></script>
-</body>
-</html>
+<section id="admin" class="view"><div class="shell"><div class="eyebrow">Local configuration</div><h1>Map evidence to your service</h1><p class="lead">This is the commercial layer: central logic can remain consistent while the destination varies by organisation.</p><div class="admin"><form class="config" id="config"><h3>Organisation</h3><label class="field">Organisation / Trust<input id="org" placeholder="e.g. Cambridge University Hospitals"></label><label class="field">Acute knee clinic name<input id="clinic" placeholder="e.g. Acute Knee Clinic"></label><label class="field">Referral instruction<textarea id="referral" placeholder="e.g. Refer via local electronic referral pathway"></textarea></label><label class="field">Service contact<input id="contact" placeholder="Operational service contact"></label><button class="primary">Save local configuration</button><p class="tiny" id="saved"></p></form><div class="config"><h3>Governance snapshot</h3><div class="grow"><span>Clinical logic version</span><b>0.2-draft</b></div><div class="grow"><span>Clinical approval</span><b class="warn">Not approved</b></div><div class="grow"><span>Clinical Safety Officer</span><b>Not assigned</b></div><div class="grow"><span>Hazard log</span><b>Not started</b></div><div class="grow"><span>DCB0129 safety case</span><b>Not started</b></div><div class="grow"><span>Regulatory assessment</span><b>Required before deployment</b></div><p class="tiny">A working website is not the same thing as a deployable NHS clinical system. This prototype deliberately exposes the governance work still needed.</p></div></div></div></section>
+<div id="toast" class="toast"></div>
+<script>
+const views=[...document.querySelectorAll('.view')];function showView(v){views.forEach(x=>x.classList.toggle('active',x.id===v));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===v));window.scrollTo(0,0)}document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>showView(b.dataset.view));
+const steps=[...document.querySelectorAll('.step')], sideBtns=[...document.querySelectorAll('.side button[data-step]')];function showStep(n){steps.forEach(s=>s.classList.toggle('active',s.dataset.screen==n));sideBtns.forEach(b=>b.classList.toggle('active',b.dataset.step==n))}document.querySelectorAll('[data-next]').forEach(b=>b.onclick=()=>showStep(b.dataset.next));document.querySelectorAll('[data-back]').forEach(b=>b.onclick=()=>showStep(b.dataset.back));sideBtns.forEach(b=>b.onclick=()=>showStep(b.dataset.step));
+const sel=k=>document.querySelector(`[data-key="${k}"]`)?.checked;const red=['nv','disloc','infection','open'];
+function cfg(){return JSON.parse(localStorage.getItem('kneerouteConfig')||'{}')}function chips(arr){return arr.map(x=>`<span class="chip">${x}</span>`).join('')}
+function card(route,urgency,next,rationale,evidence){let c=cfg();let local=(c.org||c.clinic||c.referral||c.contact)?`<div class="rr"><span>Local route</span><p>${c.org?'<b>'+c.org+'</b><br>':''}${c.clinic?'Destination: '+c.clinic+'<br>':''}${c.referral?'Referral: '+c.referral+'<br>':''}${c.contact?'Contact: '+c.contact:''}</p></div>`:'';return `<div class="result"><div class="resulthead"><div><small>SUGGESTED ROUTE</small><br><b>${route}</b></div><span class="status">${urgency}</span></div><div class="resultbody"><div class="rr"><span>Next step</span><p>${next}</p></div><div class="rr"><span>Rationale</span><p>${rationale}</p></div><div class="rr"><span>Evidence</span><p>${chips(evidence)}</p></div>${local}<div class="rr"><span>Governance</span><p>Logic v0.2-draft · not clinically approved</p></div></div></div><p class="tiny">Research prototype only. This output is not a diagnosis or a validated clinical recommendation. Clinician judgement and local policy take precedence.</p>`}
+document.getElementById('generate').onclick=()=>{let o='';if(red.some(sel))o=`<div class="alert"><b>Leave routine pathway — urgent assessment required</b><p>One or more immediate safety concerns were selected. Escalate according to the relevant emergency / orthopaedic pathway and local policy.</p></div><p class="tiny">The prototype does not attempt to automate emergency management.</p>`;else if(sel('fracture'))o=card('Trauma / fracture pathway','Urgent','Use the relevant local trauma pathway.','Fracture has been identified or is strongly suspected.',['NICE · Ottawa knee rule']);else if(sel('extensor'))o=card('Urgent orthopaedic assessment','Urgent','Use the local acute orthopaedic pathway.','Potential extensor mechanism disruption is a structural injury requiring prompt specialist assessment.',['Evidence review required']);else if(sel('lock'))o=card('Locked-knee specialist pathway','Expedited','Arrange expedited specialist knee assessment through the locally agreed route.','Persistent true mechanical locking may indicate a displaced intra-articular lesion and should not be treated as an uncomplicated knee sprain.',['Evidence review required']);else if(sel('ocf'))o=card('Osteochondral injury pathway','Expedited','Route for specialist knee assessment and imaging review.','A loose body or osteochondral fragment may alter management and needs injury-specific assessment.',['BOA FTLPD · 2024']);else if(sel('patella'))o=card('First-time patellar dislocation pathway','Pathway-specific','Follow the current local FTLPD pathway.','First-time lateral patellar dislocation has specific assessment and initial-management standards.',['BOA FTLPD · 2024']);else if(sel('haem')||sel('instability')||sel('pop')||sel('giving')){let p=(document.getElementById('age').value==='u16'||document.getElementById('age').value==='16-17');o=card('Acute knee specialist assessment','Priority','Arrange assessment by a clinician proficient in acute knee injury assessment through the local acute-knee route.','BOA ACL guidance highlights assessment of acute traumatic knee haemarthrosis by a clinician proficient in knee injury assessment.',p?['BOA ACL · 2020','BOA paediatric ACL · 2022']:['BOA ACL · 2020'])}else o=card('Local MSK / clinical review pathway','Clinician-defined','Use clinical judgement and the locally agreed pathway.','No higher-priority trigger encoded in this prototype was selected. This does not exclude significant injury.',['NICE CKS']);document.getElementById('output').innerHTML=o;showStep(5)};
+document.getElementById('copy').onclick=async()=>{await navigator.clipboard.writeText(document.getElementById('output').innerText);toast('Summary copied')};document.getElementById('config').onsubmit=e=>{e.preventDefault();let c={org:org.value.trim(),clinic:clinic.value.trim(),referral:referral.value.trim(),contact:contact.value.trim()};localStorage.setItem('kneerouteConfig',JSON.stringify(c));saved.textContent='Saved locally in this browser.';toast('Local configuration saved')};let c=cfg();org.value=c.org||'';clinic.value=c.clinic||'';referral.value=c.referral||'';contact.value=c.contact||'';function toast(m){let t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600)}
+</script>
+</body></html>
